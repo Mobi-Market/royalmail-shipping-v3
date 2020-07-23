@@ -168,6 +168,13 @@ trait RestApiClient
             'X-RMG-Security-Password' => $this->auth->password,
         ];
 
+        Log::warning('Royal Mail: Getting Fresh Token', [
+            'cached'    => Cache::get('rm-integration-token'),
+            'headers'   => $headers,
+            'token'     => $this->auth->token,
+            'cache_ttl' => $this->cache_ttl
+        ]);
+
         // do not refresh, since this IS the refresh request.
         $response = $this->sendAPIRequestNotEmpty('post', 'token', null, $headers, true);
 

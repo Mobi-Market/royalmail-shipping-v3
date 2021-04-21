@@ -47,14 +47,14 @@ trait RestApiClient
         if (true === $should_log) {
             $stack->push(
                 Middleware::log(
-                    Log::getMonolog(),
+                    Log::getLogger(),
                     new MessageFormatter('{req_body} - {res_body}')
                 )
             );
 
             $stack->push(
                 Middleware::log(
-                    Log::getMonolog(),
+                    Log::getLogger(),
                     new MessageFormatter('{uri} - {method} - {code}')
                 )
             );

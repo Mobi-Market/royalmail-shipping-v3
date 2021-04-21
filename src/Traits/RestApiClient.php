@@ -8,6 +8,7 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use MobiMarket\RoyalMailShipping\Entities\ApiAuth;
 use MobiMarket\RoyalMailShipping\Exceptions\RequestFailed;
